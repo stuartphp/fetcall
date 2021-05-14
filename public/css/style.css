@@ -1,0 +1,9 @@
+body {
+    font-size: 13px;
+  }
+.navbar {
+    border-bottom: 1px solid #ccc;
+}
+a.dropdown-item {
+    font-size: 0.8rem;
+}
