@@ -20,3 +20,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth', 'web'])->group(function () {
+    Route::resource('email-accounts', App\Http\Controllers\Email\EmailAccountsController::class);
+});
