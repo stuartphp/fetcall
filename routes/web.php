@@ -17,10 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/dashboard', function(){ return view('dashboard');})->name('dashboard');
+    Route::prefix('admin')->group(function () {
+        Route::get('/emails', [\App\Http\Controllers\Admin\EmailsController::class, 'emails'])->name('admin.emails');
+    });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+});
+
