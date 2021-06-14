@@ -15,7 +15,7 @@ class CreateEmailAccountsTable extends Migration
     {
         Schema::create('email_accounts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('uesr_id');
+            $table->unsignedBigInteger('user_id');
             $table->boolean('is_imap')->default(1);
             $table->string('incoming_mail');
             $table->unsignedSmallInteger('incoming_port');
