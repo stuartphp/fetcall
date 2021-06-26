@@ -19,7 +19,10 @@ class DatabaseSeeder extends Seeder
             'name'=>'Stuart Harrison',
             'email'=>'stuart@itecassist.co.za',
             'password'=>'$2y$10$IJQQuG59n3I8E4UzDFPRoO/jZhV1GquEmP8Vyo5WO32em1h7PyjSS',//password
-            'theme'=>1,
+            'id_number'=>'7006155050081',
+            'gender'=>1,
+            'date_of_birth'=>'1970-06-15',
+            'delivery_address'=>"844 Haarhoff street\nPretoria\nGauteng\n0084",
             'is_active'=>1,
         ]);
     }

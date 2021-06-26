@@ -23,6 +23,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/dashboard', function(){ return view('dashboard');})->name('dashboard');
     Route::prefix('admin')->group(function () {
         Route::get('/emails', [\App\Http\Controllers\Admin\EmailsController::class, 'emails'])->name('admin.emails');
+        Route::get('/accounts', function(){ return view('admin.accounts');})->name('admin.accounts');
     });
 
 });

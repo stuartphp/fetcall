@@ -19,7 +19,10 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->unsignedTinyInteger('theme')->default(1);
+            $table->char('id_number', 13);
+            $table->boolean('gender');
+            $table->date('date_of_birth');
+            $table->text('delivery_address');
             $table->boolean('is_active')->default(1);
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
